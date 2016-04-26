@@ -1,0 +1,6 @@
+{
+  "name": "MERFISHtools",
+  "tagline": "A Bayesian framework for gene expression analysis on MERFISH data.",
+  "body": "MERFISHtools implement a Bayesian framework for accurately predicting gene or transcript expression from MERFISH data.\r\nOn top, differential expression analysis can be performed for two or multiple conditions, including credible intervals for fold change and coefficient of variation, and controlling the expected false discovery rate.\r\n\r\n### Author\r\n[Johannes Köster](https://johanneskoester.bitbucket.org)",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
