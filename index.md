@@ -16,6 +16,10 @@ MERFISHtools can be installed and updated easily via [Bioconda](http://bioconda.
 
 ## Usage
 
+For usage instructions at the command line, please issue
+
+    merfishtools --help
+
 A typical MERFISHtools workflow is as follows.
 
 ### Step 1: Estimate transcript expressions
@@ -65,9 +69,10 @@ Further, the optional flag `--estimate estimates.txt` results in a table with ex
 ### Step 2:
 
 
-For usage instructions, please issue
 
-    merfishtools --help
+
+
+
 
 ## Author
 [Johannes Köster](https://johanneskoester.bitbucket.org)
