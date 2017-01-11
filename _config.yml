@@ -1,7 +1,7 @@
 title: MERFISHtools
 description: A Bayesian framework for gene expression analysis on MERFISH data.
 google_analytics: 
-show_downloads: true
+show_downloads: false
 theme: jekyll-theme-slate
 
 gems:
