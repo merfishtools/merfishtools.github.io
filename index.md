@@ -30,6 +30,12 @@ A typical MERFISHtools workflow is as follows.
 Transcript expressions are estimated from raw MERFISH data via
 
     merfishtools exp --threads 8 codebook.txt --estimate estimates.txt < data.txt > expression.txt
+    
+See
+
+    merfishtools exp --help
+
+for additional parameters.
 
 #### Input
 
@@ -79,6 +85,11 @@ In case of two conditions, you can issue
     merfishtools diffexp --threads 8 expression1.txt expression2.txt > diffexp.txt
  
 to calculate differentially expressed transcripts.
+See
+
+    merfishtools diffexp --help
+
+for additional parameters.
 
 ##### Input
 
@@ -104,7 +115,11 @@ In case of more than two conditions, you can issue
 
     merfishtools multidiffexp --threads 8 expression1.txt expression2.txt expression3.txt ... > diffexp.txt
  
-to calculate differentially expressed transcripts. Here, the coefficient of variation over the condition means is used as measure for differential expression.
+to calculate differentially expressed transcripts. Here, the coefficient of variation over the condition means is used as measure for differential expression. See
+
+    merfishtools multidiffexp --help
+
+for additional parameters.
 
 ##### Input
 
