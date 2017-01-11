@@ -29,11 +29,11 @@ A typical MERFISHtools workflow is as follows.
 ### Step 1: Estimate transcript expressions
 Transcript expressions are estimated from raw MERFISH data via
 
-    merfishtools exp codebook.txt --estimate estimates.txt < data.txt > expression.txt
+    merfishtools exp --threads 8 codebook.txt --estimate estimates.txt < data.txt > expression.txt
 
 #### Input
 
-The file `codebook.txt` is a MERFISH codebook, consisting of tab separated columns: 
+The file `codebook.txt` is a MERFISH codebook ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/codebook/140genesData.1.txt)), consisting of tab separated columns: 
 
 * feature,
 * codeword,
@@ -41,7 +41,7 @@ The file `codebook.txt` is a MERFISH codebook, consisting of tab separated colum
 
 The last column denotes if a codeword is assigned to e.g. a gene for which expression can be expected. Unless you have misidentification probes (see Chen et al. Science 2015), you will have only ones in this column.
 
-The file `data.txt` contains MERFISH readouts in tab-separated format. The expected columns are
+The file `data.txt` ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/data/140genesData.1.all.txt)) contains MERFISH readouts in tab-separated format. The expected columns are
 
 * cell,
 * feature,
@@ -76,13 +76,13 @@ Further, the optional flag `--estimate estimates.txt` results in a table with ex
 
 In case of two conditions, you can issue
 
-    merfishtools diffexp expression1.txt expression2.txt > diffexp.txt
+    merfishtools diffexp --threads 8 expression1.txt expression2.txt > diffexp.txt
  
 to calculate differentially expressed transcripts.
 
 ##### Input
 
-The files `expression1.txt` and `expression2.txt` contain the PMFs of the two conditions to compare, and are obtained by running step 1 on the data for each condition.
+The files `expression1.txt` and `expression2.txt` ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/expressions/140genesData.1.all.default.txt)) contain the PMFs of the two conditions to compare, and are obtained by running step 1 on the data for each condition.
 
 ##### Output
 
@@ -94,6 +94,7 @@ Results are provided as tab separated table at STDOUT (here piped into the file 
 * bayes factor (BF) for differential expression,
 * expected log2 fold change of first vs second group,
 * standard deviation of log2 fold change,
+* maximum a posteriori (MAP) log2 fold change,
 * lower bound of 95% credible interval of log2 fold change,
 * upper bound of 95% credible interval of log2 fold change.
 
@@ -101,13 +102,13 @@ Results are provided as tab separated table at STDOUT (here piped into the file 
 
 In case of more than two conditions, you can issue
 
-    merfishtools multidiffexp expression1.txt expression2.txt expression3.txt ... > diffexp.txt
+    merfishtools multidiffexp --threads 8 expression1.txt expression2.txt expression3.txt ... > diffexp.txt
  
 to calculate differentially expressed transcripts. Here, the coefficient of variation over the condition means is used as measure for differential expression.
 
 ##### Input
 
-The files `expression1.txt` and `expression2.txt`, ... contain the PMFs of the conditions to compare, and are obtained by running step 1 on the data for each condition.
+The files `expression1.txt` and `expression2.txt`, ... ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/expressions/140genesData.1.all.default.txt)) contain the PMFs of the conditions to compare, and are obtained by running step 1 on the data for each condition.
 
 ##### Output
 
@@ -119,6 +120,7 @@ Results are provided as tab separated table at STDOUT (here piped into the file 
 * bayes factor (BF) for differential expression,
 * expected coefficient of variation (CV),
 * standard deviation of CV,
+* maximum a posteriori (MAP) CV,
 * lower bound of 95% credible interval of CV,
 * upper bound of 95% credible interval of CV.
 
