@@ -42,10 +42,9 @@ for additional parameters.
 The file `codebook.txt` is a MERFISH codebook ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/codebook/140genesData.1.txt)), consisting of tab separated columns: 
 
 * feature,
-* codeword,
-* expressed. 
+* codeword. 
 
-The last column denotes if a codeword is assigned to e.g. a gene for which expression can be expected. Unless you have misidentification probes (see Chen et al. Science 2015), you will have only ones in this column.
+Note that the codebook should not list misidentification probes (see Chen et al. Science 2015).
 
 The file `data.txt` ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/data/140genesData.1.all.txt)) contains MERFISH readouts in tab-separated format. The expected columns are
 
