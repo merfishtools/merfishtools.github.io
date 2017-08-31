@@ -42,9 +42,10 @@ for additional parameters.
 The file `codebook.txt` is a MERFISH codebook ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/codebook/140genesData.1.txt)), consisting of tab separated columns: 
 
 * feature,
-* codeword. 
+* codeword
+* expressed.
 
-Note that the codebook should not list misidentification probes (see Chen et al. Science 2015).
+The last column has to contain a 1 if a feature is expressed (e.g. it is a transcript or gene), and a 0 if it is a misidentification probe (see Chen et al. Science 2015). Note that these probes are important for MERFISHtools to estimate noise rates and provide more accurate predictions.
 
 The file `data.txt` ([example](https://github.com/merfishtools/merfishtools-evaluation/raw/master/data/140genesData.1.all.txt)) contains MERFISH readouts in tab-separated format. The expected columns are
 
@@ -69,7 +70,7 @@ Further, the optional flag `--estimate estimates.txt` results in a table with ex
 
 * cell,
 * feature,
-* expected value,
+* maximum a posteriori (MAP) estimate,
 * standard deviation,
 * maximum a-posteriori probability estimate (MAP),
 * lower bound of 95% credible interval,
@@ -102,7 +103,7 @@ Results are provided as tab separated table at STDOUT (here piped into the file 
 * posterior error probability (PEP) for differential expression,
 * expected FDR when selecting all features down to the current,
 * bayes factor (BF) for differential expression,
-* expected log2 fold change of first vs second group,
+* maximum a posteriori (MAP) log2 fold change of first vs second group,
 * standard deviation of log2 fold change,
 * maximum a posteriori (MAP) log2 fold change,
 * lower bound of 95% credible interval of log2 fold change,
@@ -132,7 +133,7 @@ Results are provided as tab separated table at STDOUT (here piped into the file 
 * posterior error probability (PEP) for differential expression,
 * expected FDR when selecting all features down to the current,
 * bayes factor (BF) for differential expression,
-* expected coefficient of variation (CV),
+* maximum a posteriori (MAP) coefficient of variation (CV),
 * standard deviation of CV,
 * maximum a posteriori (MAP) CV,
 * lower bound of 95% credible interval of CV,
