@@ -29,7 +29,7 @@ A typical MERFISHtools workflow is as follows.
 ### Step 1: Estimate transcript expressions
 Transcript expressions are estimated from raw MERFISH data via
 
-    merfishtools exp --threads 8 codebook.txt --estimate estimates.txt < data.txt > expression.txt
+    merfishtools exp --threads 8 codebook.txt data.txt --estimate estimates.txt > expression.txt
     
 See
 
@@ -56,6 +56,8 @@ The file `data.txt` ([example](https://github.com/merfishtools/merfishtools-eval
 * cell_position_y,
 * rna_position_x,
 * rna_position_y.
+
+When using MERFISH protocol v2, you will have a binary file format containing the readouts. Merfishtools will detect this automatically.
 
 #### Output
 
