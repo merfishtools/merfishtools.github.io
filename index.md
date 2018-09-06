@@ -10,9 +10,9 @@ On top, differential expression analysis can be performed for two or multiple co
 
 ## Citation
 
-If you use MERFISHtools, please cite our preprint
+If you use MERFISHtools, please cite our paper
 
-*Köster, Johannes; Brown, Myles; Liu, X. Shirley (2016): A Bayesian model for single cell transcript expression analysis on MERFISH data. figshare. https://dx.doi.org/10.6084/m9.figshare.3438662.v5*
+*Köster, Johannes, Myles Brown, X. Shirley Liu. "A Bayesian Model for Single Cell Transcript Expression Analysis on MERFISH Data." Bioinformatics 2018. https://doi.org/10.1093/bioinformatics/bty718.*
 
 ## Installation
 
